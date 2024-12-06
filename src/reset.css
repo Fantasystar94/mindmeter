@@ -1,0 +1,78 @@
+/* 박스 모델을 border-box로 설정하여 여백과 테두리가 요소의 크기 계산에 포함되도록 합니다. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    word-break:break-all;
+}
+
+@font-face {
+    font-family: 'BMDOHYEON';
+    src: url('https://cdn.jsdelivr.net/gh/wizfile/font/BMDOHYEON.eot');
+    src:url('https://cdn.jsdelivr.net/gh/wizfile/font/BMDOHYEON.woff') format('woff');
+    font-style: normal;
+}
+		
+
+/* 기본적인 텍스트 스타일을 설정 */
+body {
+    line-height: 1.5;
+    font-family: Arial, sans-serif;
+}
+
+/* 불필요한 리스트 스타일 제거 */
+ul, ol {
+    list-style: none;
+}
+
+/* a 태그 기본 스타일 제거 */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 이미지, 비디오 등 미디어 요소에 기본 스타일 제거 */
+img,
+video,
+object {
+    max-width: 100%;
+    display: block;
+}
+
+/* 테이블 기본 스타일 제거 */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/* 폼 요소 스타일 초기화 */
+input,
+button,
+textarea,
+select {
+    appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+/* 스타일을 설정한 후, 특정 브라우저에서 추가할 수 있는 스타일이 있을 수 있으므로 이들을 삭제 */
+html, body {
+    height: 100%;
+}
+
+/* 기본적인 폰트 설정 */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+body {
+    background-color: #E6E6FA; /* 라벤더 블루 */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}

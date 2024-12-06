@@ -1,0 +1,262 @@
+.mainWrap{
+    width:1400px;
+    margin:0 auto;
+    font-family: 'Nanum Gothic', serif;
+    position:relative;
+    min-height:80vh;
+    line-height:2em;
+    letter-spacing:-1px;
+}
+.mainWrap .question{
+    width:800px;
+    margin:0 auto;
+    display:none;
+    visibility:hidden;
+    opacity:0;
+    border-radius:10px;
+    background-color:#fff;
+    padding:20px;
+    flex-direction:column;
+    gap:20px;
+}
+.mainWrap .question p{
+    margin:0 20px;
+}
+.mainWrap .question.on{
+    visibility:visible;
+    opacity:1;
+    display:flex;
+}
+.choices{
+    display:flex;
+    flex-direction:column;
+    flex-wrap:wrap;   
+}
+.choices input[type="radio"] {
+    display: none;
+}
+.mainWrap .buttonWrap{
+    width:800px;
+    height:auto;
+    text-align:center;
+    font-weight:700;
+    cursor: pointer;
+    margin:50px auto;
+}
+.mainWrap .buttonWrap button{
+    width:30%;
+    background-color:#8738b4;
+    border-radius:10px;
+    color:#fff;
+    cursor: pointer;
+    margin:0 20px;
+}
+.mainWrap .buttonWrap button.del{
+    color:#2E1A47;
+    background-color:transparent;
+    border:1px solid #ccc;
+}
+/* 라벨 기본 스타일 */
+/* 기본 상태: 라디오 버튼 숨기기 */
+.choices input[type="radio"] {
+    display: none;
+}
+
+/* 라벨 기본 스타일 */
+.choices label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color:#8738b4;
+    border-radius: 5px;
+    width:100%;
+    color:#fff;
+    font-weight:bold;
+    cursor: pointer;
+    margin-bottom:15px;
+    text-align:center;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+.choices label:last-of-type{
+    margin-bottom:0;
+}
+
+/* 마우스 오버 시 라벨 색상 변화 */
+.choices label:hover {
+    background-color: #380568;
+}
+
+/* 라디오 버튼이 선택되지 않은 상태에서 라벨의 색상 */
+.choices input[type="radio"]:not(:checked) + label {
+    background-color: #f9f9f9;
+    color: #333;
+    border-color: #ccc;
+}
+
+.intro{
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    background-color:#B7A8D9;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    font-family: 'BMDOHYEON', sans-serif; /* 'BMDOHYEON' 폰트 적용 */
+    z-index:999;
+}
+.intro.off{
+    visibility:hidden;
+    opacity:0;
+}
+.intro .introH{
+    font-size:68px;
+    color:#fff;
+    font-weight:700;
+    animation:enlargeShake 2s ease-out ;
+}
+
+@keyframes enlargeShake {
+    0% {
+        transform: scale(1); /* 시작 크기 */
+    }
+    25% {
+        transform: scale(2) translateX(-10px); /* 커지면서 왼쪽으로 조금 흔들림 */
+    }
+    50% {
+        transform: scale(2) translateX(10px); /* 오른쪽으로 조금 흔들림 */
+    }
+    75% {
+        transform: scale(2) translateX(-5px); /* 왼쪽으로 다시 흔들림 */
+    }
+    100% {
+        transform: scale(1); /* 원래 크기로 돌아오기 */
+    }
+}
+
+header .headerSection{
+    width:auto;
+    margin:0 auto;
+    text-align:center;
+    font-size:50px;
+    color:#000;
+    font-family: 'BMDOHYEON', sans-serif; /* 'BMDOHYEON' 폰트 적용 */
+    padding:30px 10px 10px 10px;
+}
+.answer{
+    width:auto;
+    width:960px;
+    margin:50px auto 0;
+    background-color:#fff;
+    border-radius:12px;
+}
+.answer .answerWrap{
+    padding:30px;
+    font-size:20px;
+}
+.answer .answerWrap .title{
+    font-size:32px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+.copyBtn{
+    margin:30px auto;
+    width:100%;
+    display:block;
+    font-size:24px;
+    font-family: 'BMDOHYEON', sans-serif;
+    position:relative;
+    background-color:#380568;
+    border-radius:12px;
+    height:50px;
+    line-height:24px;
+    color:#fff;
+}
+.copyBtn:hover::after{
+    content:'copy?';
+    width:auto;
+    height:auto;
+    padding:5px;
+    background-color:#8738b4;
+    border-radius:12px;
+    position:absolute;
+    left:0;
+    top:-20px;
+    font-size:20px;
+}
+.copyBtn:hover.on::after{
+    content:'copied!';
+}
+@media (max-width:749px) {
+    header .headerSection{
+        max-width:750px;
+        width:auto;
+        font-size:36px;
+
+    }
+    .mainWrap{
+        width:auto;
+        max-width:750px;
+        padding:0 20px;
+        min-height:80vh;
+    }
+    .mainWrap .question{
+        width:inherit;
+    }
+    .mainWrap .buttonWrap{
+        width:inherit;
+        margin-top:20px;
+    }
+    .mainWrap .question p{
+        margin:0;
+    }
+    .mainWrap .buttonWrap button{
+        width:49%;
+        margin:0 auto;
+    }
+    .intro .introH{
+        font-size:34px;
+    }
+    .answer{
+        width:inherit;
+
+    }
+    @keyframes enlargeShake {
+        0% {
+            transform: scale(1); /* 시작 크기 */
+        }
+        25% {
+            transform: scale(1.3) translateX(-10px); /* 커지면서 왼쪽으로 조금 흔들림 */
+        }
+        50% {
+            transform: scale(1.3) translateX(10px); /* 오른쪽으로 조금 흔들림 */
+        }
+        75% {
+            transform: scale(1.3) translateX(-5px); /* 왼쪽으로 다시 흔들림 */
+        }
+        100% {
+            transform: scale(1); /* 원래 크기로 돌아오기 */
+        }
+    }
+    .copyBtn{
+        width:100%;
+    }
+    .copyBtn:hover::after{
+        content:'';
+        visibility:hidden;
+    }
+    .copyBtn:hover.on::after{
+        visibility:visible;
+        content:'copied!';
+        width:auto;
+        height:auto;
+        padding:5px;
+        background-color:#8738b4;
+        border-radius:12px;
+        position:absolute;
+        left:-10px;
+        top:-30px;
+        font-size:16px;
+    }
+}
